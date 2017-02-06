@@ -2,7 +2,7 @@
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 4.5	
+Version: 1.1	
 Author: Xuwei Hu
 */
 
