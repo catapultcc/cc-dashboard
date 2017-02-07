@@ -1397,7 +1397,7 @@ ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:a
 }
 #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head, .folded #adminmenu li.current.menu-top {
 	color:#fff;
-	background:#333333
+	background:#e55f00
 }
 #adminmenu li.wp-has-current-submenu div.wp-menu-image:before {
 	color:#fff
