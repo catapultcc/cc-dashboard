@@ -14,7 +14,7 @@ class GitHubPluginUpdater {
 		add_filter("pre_set_site_transient_update_plugins", array($this, "setTransitent"));
 		add_filter( "plugins_api", array( $this, "setPluginInfo" ), 10, 3 );
 		add_filter( "upgrader_pre_install", array( $this, "preInstall" ), 10, 3 );
-        add_filter( "upgrader_post_install", array( $this, "postInstall" ), 10, 3 );
+        	add_filter( "upgrader_post_install", array( $this, "postInstall" ), 10, 3 );
 		
 		$this->pluginFile = $pluginFile;
 		$this->username = $gitHubUsername;
@@ -99,6 +99,8 @@ class GitHubPluginUpdater {
 		if (!isset($response->slug) || ($response->slug != $this->slug)) {
 			return $false;
 		}
+		
+		$pluginBanner = plugins_url( '/images/banner.png', __FILE__ );
 		// Add our plugin information
 		$response->last_update = $this->gitHubAPIResult->published_at;
 		$response->slug = $this->slug;
@@ -106,6 +108,8 @@ class GitHubPluginUpdater {
 		$response->version = $this->gitHubAPIResult->tag_name;
 		$response->author = $this->pluginData["AuthorName"];
 		$response->homepage = $this->pluginData["PluginURI"];
+		$response->banners["high"] = $pluginBanner;
+		$response->banners["low"] = $pluginBanner;
 		
 		// Download link for zipfile
 		$downloadLink = $this->gitHubAPIResult->zipball_url;
