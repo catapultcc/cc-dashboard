@@ -2,7 +2,9 @@
 Contributors: Xuwei Hu
 Tags: dashboard, catapult, hellendoorn, cc-dashboard, cc
 Donate link: https://www.catapult.nl
+Requires at least: 4.3.0
 Tested up to: 4.7.3
+Stable tag: trunk
 
 CC-dahsboard plugin voor sites gemaakt door Catapult Creeert.
 
