@@ -110,6 +110,8 @@ class GitHubPluginUpdater {
 		$response->homepage = $this->pluginData["PluginURI"];
 		$response->banners["high"] = $pluginBanner;
 		$response->banners["low"] = $pluginBanner;
+		$response->requires = "4.3.0";
+		$response->tested = "4.7.3";
 		
 		// Download link for zipfile
 		$downloadLink = $this->gitHubAPIResult->zipball_url;
