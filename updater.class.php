@@ -110,8 +110,6 @@ class GitHubPluginUpdater {
 		$response->homepage = $this->pluginData["PluginURI"];
 		$response->banners["high"] = $pluginBanner;
 		$response->banners["low"] = $pluginBanner;
-		$response->requires = "4.3.0";
-		$response->tested = "4.7.3";
 		
 		// Download link for zipfile
 		$downloadLink = $this->gitHubAPIResult->zipball_url;
@@ -133,7 +131,7 @@ class GitHubPluginUpdater {
 			: $this->gitHubAPIResult->body
 		);
 		
-		// Gets the required version of WP if available
+		// Gets the required version of WP if available in changelog
 		$matches = null;
 		preg_match("/requires:\s([\d.]+)/i", $this->gitHubAPIResult->body, $matches);
 		if(!empty($matches)) {
@@ -144,7 +142,7 @@ class GitHubPluginUpdater {
 			}
 		}
 		
-		// Gets tested version of WP if available
+		// Gets tested version of WP if available in changelog
 		$matches = null;
 		preg_match("/tested:\s([\d\.]+)/i", $this->gitHubAPIResult->body, $matches);
 		if(!empty($matches)) {
