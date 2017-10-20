@@ -2,7 +2,7 @@
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 1.7.4
+Version: 1.7.5
 Author: Xuwei Hu
 */
 
@@ -71,6 +71,20 @@ function my_login_logo() { ?>
 		p#backtoblog {
 			padding-bottom: 20px !important;
 			}
+		body.login .button-primary {
+			background-color: #f08303 !important;
+			text-shadow: none !important;
+			border: none !important;
+			box-shadow: none !important;
+			width: 100% !important;
+			margin-top: 15px !important;
+			padding: 20px !important;
+			line-height: 0 !important;
+		}
+		body.login #login {
+			width: 300px;
+			padding: 30px 0 0 !important;
+		}
     </style>
     
     
