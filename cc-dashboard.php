@@ -2,7 +2,7 @@
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 1.7.5
+Version: 1.7.6
 Author: Xuwei Hu
 */
 
@@ -22,70 +22,42 @@ function catapult_admin_image () {
 }
 add_filter( 'admin_footer_text', 'catapult_admin_image');
 
-function my_login_logo() { ?>
+function my_login_logo() {
+	wp_register_style( 'eigen_admin_stylesheet', plugins_url( '/css/eigen.css', __FILE__ ) );
+	wp_enqueue_style( 'eigen_admin_stylesheet' );
+?>
+   	<script src="https://use.fontawesome.com/6051b8d857.js"></script>
     
-    <style type="text/css">
-    	body.login{
-    		background-color: #FFF;
-			<?php echo 'background-image:url(' . plugins_url( '/images/background.jpg', __FILE__ ) . '); '; ?>
-    		background-size: cover;
-    	}
+	<style type="text/css">
+		body.login{
+			background-color: #FFF;
+			<?php echo 'background-image:url(' . plugins_url( '/images/pattern.svg', __FILE__ ) . '); '; ?>
+			background-size: cover;
+		}
 
-        body.login div#login h1 a {
-			<?php echo 'background-image:url(' . plugins_url( '/images/logo-groot.png', __FILE__ ) . '); '; ?>
-            padding-bottom: 30px;
-            background-size: 100%;
+		body.login div#login h1 a {
+			<?php echo 'background-image:url(' . plugins_url( '/images/cc_icoon.svg', __FILE__ ) . '); '; ?>
+			padding-bottom: 30px;
+			background-size: 60%;
 			width: 260px;
-        }
-
-        body.login .button-primary{
-        	background-color:#f08303;
-        	border: 0;
-        }
-
-        body.login .button-primary:hover{
-        	background-color:#e35500;
-        }
-
-        .login form{
-        	box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-        }
-        a{
-        	color:#FFF!important;
-        }
-        a:hover{
-        	color:#FFF!important;
-        }
-		body.login #login {
-			width: 320px;
-			padding: 8% 0 0;
-			margin: auto;
-			background-color: #fff;
+			background-position: center;
 		}
-		p#nav a{
-			color: #333333 !important;
-			}
-		p#backtoblog a{
-			color: #333333 !important;
-			}
-		p#backtoblog {
-			padding-bottom: 20px !important;
-			}
-		body.login .button-primary {
-			background-color: #f08303 !important;
-			text-shadow: none !important;
-			border: none !important;
-			box-shadow: none !important;
-			width: 100% !important;
-			margin-top: 15px !important;
-			padding: 20px !important;
-			line-height: 0 !important;
-		}
-		body.login #login {
-			width: 300px;
-			padding: 30px 0 0 !important;
-		}
-    </style>
+		
+	</style>
+   
+   <div id="wp-login-menu-links">
+  		<ul class="wp-login-menu">
+  			<li>
+  				<a href="<?php echo site_url(); ?>"><i class="fa fa-home wp-login-home-button" aria-hidden="true"></i></a>
+  				<span class="tooltiptext">Homepage</span>
+  			</li>
+  			<li>
+  				<a href="<?php echo site_url(); ?>/wp-login.php?action=lostpassword"><i class="fa fa-key" aria-hidden="true"></i></a>
+  				<span class="tooltiptext">Wachtwoord vergeten</span>
+  			</li>
+  		</ul>
+   		
+   </div>
     
     
 <?php }
