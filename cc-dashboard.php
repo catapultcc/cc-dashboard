@@ -1,8 +1,8 @@
-<?php 
+ <?php 
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 1.7.6
+Version: 1.7.7
 Author: Xuwei Hu
 */
 
@@ -21,6 +21,48 @@ function catapult_admin_image () {
 	echo '<img src="' . plugins_url( 'images/help.png' , __FILE__ ) . '"><p>Heeft u vragen? Stuur ons een mail op <a href="mailto:communicatie@catapult.nl">communicatie@catapult.nl</a> of bel met 0548-654954</p>';
 }
 add_filter( 'admin_footer_text', 'catapult_admin_image');
+
+
+if (get_theme_mod("cookie_melding")) {
+	// TOEVOEGEN COOKIEMELDING
+	add_action( 'wp_footer', 'catapult_cookie_functie' );
+	function catapult_cookie_functie() {
+
+	if(!isset($_COOKIE['catacookie'])){ ?>
+		<script type="text/javascript">
+		function SetCookie(c_name,value,expiredays)
+		{
+			var exdate=new Date()
+			exdate.setDate(exdate.getDate()+expiredays)
+			document.cookie=c_name+ "=" +escape(value)+";path=/"+((expiredays==null) ? "" : ";expires="+exdate.toGMTString()) 
+		}
+		</script>
+		<div id="catacookielaw">
+			<div class="catacookielaw-left">
+				<p>Deze website gebruikt cookies om gebruikersstatistieken te meten.</p>
+			</div>
+			<div class="catacookielaw-right">
+				<a id="removecookie">Ok</a>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		var $j = jQuery.noConflict();
+		$j(function(){
+			if( document.cookie.indexOf("catacookie") ===-1 ){
+				$j("#catacookielaw").show();
+			}
+			$j("#removecookie").click(function () {
+				SetCookie('catacookie','catacookie',365)
+				$j("#catacookielaw").fadeOut("slow");
+			});
+		});
+		</script>
+		<style type="text/css"><!--#catacookielaw { display:none }-->#catacookielaw a,#catacookielaw p{display:block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;letter-spacing:.6px}#catacookielaw{position:fixed;left:0;width:100%;display:inline-block;background-color:#efefef;animation:slide-up-fade-in ease 2s;bottom:0;z-index:99999}#catacookielaw p{margin:0 auto;padding:8px;color:#6b6b6b}#catacookielaw a{margin:0;color:#fff;padding:7px;cursor:pointer}#catacookielaw a:hover{background-color:#4B4B4B}#catacookielaw .catacookielaw-left{float:left}#catacookielaw .catacookielaw-right{width:75px;float:right;background-color:#333;text-align:center}@keyframes slide-up-fade-in{from{opacity:0;transform:translate(0,60px)}to{opacity:1;transform:translate(0,0)}} @media only screen and (max-width : 480px) {#catacookielaw .catacookielaw-left {width: 75%;}#catacookielaw .catacookielaw-right {width: 25%;}#catacookielaw p { margin: 0 auto; padding: 6px; color: #6b6b6b; line-height: 125%; font-size: 12px; }#catacookielaw a {padding: 9px;} }@media only screen and (max-width : 768px) {#catacookielaw .catacookielaw-left {width: 80%;}#catacookielaw .catacookielaw-right {width: 20%;}#catacookielaw p { margin: 0 auto; padding: 7px 0 7px 15px; color: #6b6b6b; line-height: 125%; font-size: 11.5px; }#catacookielaw a {padding: 9px;} }</style>
+<?php
+		}
+	}
+}
 
 function my_login_logo() {
 	wp_register_style( 'eigen_admin_stylesheet', plugins_url( '/css/eigen.css', __FILE__ ) );
