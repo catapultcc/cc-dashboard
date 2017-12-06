@@ -1,11 +1,10 @@
- <?php 
+<?php 
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 1.7.7
+Version: 1.7.8
 Author: Xuwei Hu
 */
-
 require_once('updater.class.php');
 if(is_admin()) {
 	$updater = new GitHubPluginUpdater(__FILE__, 'catapultcc', "cc-dashboard");
@@ -63,13 +62,11 @@ if (get_theme_mod("cookie_melding")) {
 		}
 	}
 }
-
 function my_login_logo() {
 	wp_register_style( 'eigen_admin_stylesheet', plugins_url( '/css/eigen.css', __FILE__ ) );
 	wp_enqueue_style( 'eigen_admin_stylesheet' );
 ?>
    	<script src="https://use.fontawesome.com/6051b8d857.js"></script>
-    
 	<style type="text/css">
 		body.login{
 			background-color: #FFF;
@@ -84,24 +81,20 @@ function my_login_logo() {
 			width: 260px;
 			background-position: center;
 		}
-		
 	</style>
    
-   <div id="wp-login-menu-links">
-  		<ul class="wp-login-menu">
-  			<li>
-  				<a href="<?php echo site_url(); ?>"><i class="fa fa-home wp-login-home-button" aria-hidden="true"></i></a>
-  				<span class="tooltiptext">Homepage</span>
-  			</li>
-  			<li>
-  				<a href="<?php echo site_url(); ?>/wp-login.php?action=lostpassword"><i class="fa fa-key" aria-hidden="true"></i></a>
-  				<span class="tooltiptext">Wachtwoord vergeten</span>
-  			</li>
-  		</ul>
-   		
-   </div>
-    
-    
+	<div id="wp-login-menu-links">
+		<ul class="wp-login-menu">
+			<li>
+				<a href="<?php echo site_url(); ?>"><i class="fa fa-home wp-login-home-button" aria-hidden="true"></i></a>
+				<span class="tooltiptext">Homepage</span>
+			</li>
+			<li>
+				<a href="<?php echo site_url(); ?>/wp-login.php?action=lostpassword"><i class="fa fa-key" aria-hidden="true"></i></a>
+				<span class="tooltiptext">Wachtwoord vergeten</span>
+			</li>
+		</ul>
+	</div>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 ?>
