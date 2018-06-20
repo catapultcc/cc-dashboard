@@ -70,7 +70,7 @@ if (get_theme_mod("cookie_melding")) {
 	}
 }
 function my_login_logo() {
-	wp_register_style( 'eigen_admin_stylesheet', plugins_url( '/css/eigen.css', __FILE__ ) );
+	wp_register_style( 'eigen_admin_stylesheet', plugins_url( '/css/eigen.css?v=1.8.0', __FILE__ ) );
 	wp_enqueue_style( 'eigen_admin_stylesheet' );
 ?>
    	<script src="https://use.fontawesome.com/6051b8d857.js"></script>
