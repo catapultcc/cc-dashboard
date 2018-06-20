@@ -20,3 +20,4 @@ Upload the .zip folder into the plugins section of wordpress.
 1.7.7 Cookiemelding kan nu worden ingeschakeld via themaopties. Googlecode section uitgebreid met Tagmanager.
 1.7.8 Bugfix headers already sent by (output started at cc-dashboard.php:1)
 1.7.9 Bugfix cookiemelding on cache.
+1.8.0 Aanpassing cookiemelding + stijl

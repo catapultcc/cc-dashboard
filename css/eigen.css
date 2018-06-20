@@ -1,19 +1,33 @@
 /* CSS Document */
 
-
+body.login {
+	overflow-y: hidden;
+}
 
 body.login .button-primary{
-	background-color:#f08303;
+	background-color:#ff5f00;
 	border: 0;
 }
 
 body.login .button-primary:hover{
-	background-color:#e35500;
+	background-color:#000;
+	color: #fff;
 }
 
 .login form{
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
 }
+
+input[type=checkbox]:checked:before {
+    color: #ff5f00!important;
+}
+
+body.login div#login h1 a {
+    background-size: 45%!important;
+}
+
+
 a{
 	color:#FFF!important;
 }
@@ -36,7 +50,7 @@ p#backtoblog {
 	padding-bottom: 20px !important;
 	}
 body.login .button-primary {
-	background-color: #f08303 !important;
+	background-color: #ff5f00 !important;
 	text-shadow: none !important;
 	border: none !important;
 	box-shadow: none !important;
@@ -48,6 +62,8 @@ body.login .button-primary {
 body.login #login {
 	width: 300px;
 	padding: 30px 0 0 !important;
+	margin-top: 50px;
+	border-radius: 5px;
 }
 body.login #login p#nav {
 	display: none;
@@ -57,7 +73,7 @@ p#backtoblog {
 }
 
 #wp-login-menu-links {
-	background-color: #f08303;
+	background-color: #333;
     width: 50px;
     height: 100vh;
     position: fixed;
@@ -66,17 +82,17 @@ p#backtoblog {
 	display: table;
 }
 ul.wp-login-menu li a {
-	background-color: #f08303;
+	background-color: #ff5f00;
 	color: #fff;
 	text-align: center;
     text-decoration: none;
 	display: table-cell;
     height: 50px;
     width: 50px;
-	box-shadow: inset 0 -1px 0 #fcb25d;
+	box-shadow: inset 0 -1px 0 #333;
 }
 ul.wp-login-menu li a:hover {
-	background-color: #4F5256;
+	background-color: #333;
 }
 ul.wp-login-menu > li > a > .fa {
     font-size: 22px;
@@ -131,6 +147,23 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 
+
+.login #login_error, .login .message, .login .success {
+    border-left: 4px solid #333333;
+}
+#wp-auth-check-wrap #wp-auth-check {
+    max-height: 665px!important;
+
+}
+
+#wp-auth-check-wrap #wp-auth-check-form {
+    height: 102%;
+}
+
+
+#activity-widget #the-comment-list .unapproved:before {
+    background: #ff5f00;
+}
 /*==========  Non-Mobile First Method  ==========*/
 
     /* Large Devices, Wide Screens */

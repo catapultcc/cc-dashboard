@@ -2,7 +2,7 @@
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 1.7.9
+Version: 1.8.0
 Author: Xuwei Hu
 */
 require_once('updater.class.php');
@@ -11,7 +11,7 @@ if(is_admin()) {
 }
 
 function catapult_admin_styles(){
-	wp_register_style( 'catapult_admin_stylesheet', plugins_url( '/css/style.css', __FILE__ ) );
+	wp_register_style( 'catapult_admin_stylesheet', plugins_url( '/css/style.css?v=1.8.0', __FILE__ ) );
 	wp_enqueue_style( 'catapult_admin_stylesheet' );
 }
 add_action( 'admin_enqueue_scripts', 'catapult_admin_styles' );
@@ -38,7 +38,14 @@ if (get_theme_mod("cookie_melding")) {
 		</script>
 		<div id="catacookielaw" style="display: none;">
 			<div class="catacookielaw-left">
-				<p>Deze website gebruikt cookies om gebruikersstatistieken te meten.</p>
+				<?php if ( function_exists('icl_object_id') ) { ?>
+				<?php if(ICL_LANGUAGE_CODE=='nl') :
+					echo "<p>Deze website gebruikt cookies om gebruikersstatistieken te meten. Als je doorgaat gaan wij ervan uit dat je dit accepteert.</p>";
+					else : 
+						echo "<p>This website uses cookies to measure user statistics.</p>";
+					endif; ?>
+				<?php } ?>
+				
 			</div>
 			<div class="catacookielaw-right">
 				<a id="removecookie">Ok</a>
@@ -70,12 +77,12 @@ function my_login_logo() {
 	<style type="text/css">
 		body.login{
 			background-color: #FFF;
-			<?php echo 'background-image:url(' . plugins_url( '/images/pattern.svg', __FILE__ ) . '); '; ?>
+			<?php echo 'background-image:url(' . plugins_url( '/images/achtergrondcc.jpg', __FILE__ ) . '); '; ?>
 			background-size: cover;
 		}
 
 		body.login div#login h1 a {
-			<?php echo 'background-image:url(' . plugins_url( '/images/cc_icoon.svg', __FILE__ ) . '); '; ?>
+			<?php echo 'background-image:url(' . plugins_url( '/images/Logo-animated.gif', __FILE__ ) . '); '; ?>
 			padding-bottom: 30px;
 			background-size: 60%;
 			width: 260px;
