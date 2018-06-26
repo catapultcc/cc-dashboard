@@ -21,4 +21,5 @@ Upload the .zip folder into the plugins section of wordpress.
 1.7.8 Bugfix headers already sent by (output started at cc-dashboard.php:1)
 1.7.9 Bugfix cookiemelding on cache.
 1.8.0 Aanpassing cookiemelding + stijl
-1.8.1 Fix vertaling melding
+1.8.1 Fix vertaling melding, kleur Wordfence en logo dashboard links bovenin.
+1.8.2 Fix pad naar logo
