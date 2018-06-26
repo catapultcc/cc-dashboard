@@ -6,7 +6,7 @@
 	content:'';
 }
 #wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before {
-	background-image:url('logo2018.png') !important;
+	background-image:url('../images/logo2018.png') !important;
 	background-repeat: no-repeat;
 	background-position: center -3px;
 	height: 30px;
