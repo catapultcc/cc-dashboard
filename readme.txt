@@ -3,7 +3,7 @@ Contributors: Xuwei Hu
 Tags: dashboard, catapult, hellendoorn, cc-dashboard, cc
 Donate link: https://www.catapult.nl
 Requires at least: 4.3.0
-Tested up to: 4.9.4
+Tested up to: 4.9.6
 Stable tag: trunk
 
 CC-dahsboard plugin voor sites gemaakt door Catapult Creeert.
@@ -21,3 +21,4 @@ Upload the .zip folder into the plugins section of wordpress.
 1.7.8 Bugfix headers already sent by (output started at cc-dashboard.php:1)
 1.7.9 Bugfix cookiemelding on cache.
 1.8.0 Aanpassing cookiemelding + stijl
+1.8.1 Fix vertaling melding
