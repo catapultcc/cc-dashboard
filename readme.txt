@@ -25,4 +25,4 @@ Upload the .zip folder into the plugins section of wordpress.
 1.8.2 Fix pad naar logo
 2.0.0 Versie 2 met uitgebreide cookiemelding. Let op: Themabestanden moeten aangepast worden voor volledige werking!
 2.1.0 Cookiemelding aangepast ivm cache. PHP aangepast naar JS.
-2.2.0 Google Tagmanager toegevoegd aan cookiemelding en cc-dashboard. Let op: themabestanden: themacustom.php en header.php moeten aangepast worden!
+2.2.1 Google Tagmanager toegevoegd aan cookiemelding en cc-dashboard. Let op: themabestanden: themacustom.php en header.php moeten aangepast worden!
