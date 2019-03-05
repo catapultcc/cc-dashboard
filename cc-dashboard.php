@@ -2,7 +2,7 @@
 /*Plugin Name: CC Dashboard
 Plugin URI: https://www.catapult.nl
 Description: Custom dashboard voor Catapult
-Version: 2.2.2
+Version: 2.2.3
 Author: Catapult
 */
 
@@ -242,8 +242,9 @@ if (get_theme_mod("cookie_melding")) {
 
 		<style type="text/css">
 			<?php
-			if (get_option ('cookiebar_button_tekst_kleur') != "") {
+			if (get_option ('cookiebar_kleur') != "") {
 				echo "#catacookielaw p { color:".get_option ('cookiebar_button_tekst_kleur')."!IMPORTANT;}";
+				echo "#catacookielaw { background-color:".get_option ('cookiebar_kleur')."!IMPORTANT;}";
 				echo "#catacookielaw a#removecookie { background-color:".get_option ('cookiebar_button_kleur')."!IMPORTANT;}";
 			}
 			?>

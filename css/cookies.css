@@ -1,17 +1,14 @@
 #catacookielaw { display:none }
-#catacookielaw a#removecookie{display: inline-block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;}
-#catacookielaw a#settingscookie{display: inline-block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;}
-#catacookielaw p{display:block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;}
-
-#catacookielaw{position:fixed;left:0;width:100%;display:inline-block;background-color:#efefef;animation:slide-up-fade-in ease 3s;bottom:0;z-index:99999; min-height: 50px;}
-#catacookielaw p{margin:0 auto;padding:15px 10px;color:#6b6b6b;}
-#catacookielaw a#removecookie {margin: 0; color: #fff; padding: 15px; cursor: pointer; height: 50px; width: 50px; background-color: #37b24d!IMPORTANT}
-#catacookielaw a#settingscookie {margin: 0; color: #007bff; padding: 15px; cursor: pointer; height: 50px; width: 50px;}
-#catacookielaw a#removecookie:hover{background-color:#fff!IMPORTANT; color: #333;}
-#catacookielaw a#settingscookie:hover{background-color:#fff; color: #fff;}
-#catacookielaw .catacookielaw-left{float:left; width: 85%;}
+#catacookielaw a#removecookie { display: inline-block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;}
+#catacookielaw a#settingscookie { display: inline-block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;}
+#catacookielaw p { display:block;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:13px;margin:0 auto;padding:15px 10px 0px 10px;color:#6b6b6b; line-height: 24px!important;}
+#catacookielaw { position:fixed;left:0;width:100%;display:inline-block;background-color:#efefef;animation:slide-up-fade-in ease 3s;bottom:0;z-index:99999; min-height: 50px;}
+#catacookielaw a#removecookie { margin: 0; color: #fff; padding: 15px; cursor: pointer; height: 50px; width: 50px; background-color: #37b24d!IMPORTANT}
+#catacookielaw a#settingscookie { margin: 0; color: #007bff; padding: 15px; cursor: pointer; height: 50px; width: 50px;}
+#catacookielaw a#removecookie:hover{ background-color:#fff!IMPORTANT; color: #333;}
+#catacookielaw a#settingscookie:hover{ background-color:#fff; color: #fff;}
+#catacookielaw .catacookielaw-left{ float:left; width: 85%;}
 #catacookielaw .catacookielaw-right{ height: 50px;  width: 15%; float:right; text-align:right; }@keyframes slide-up-fade-in{from{opacity:0;transform:translate(0,60px)}to{opacity:1;transform:translate(0,0)}} 
-
 
 /* cookie popup */
 .cmodal {
@@ -105,6 +102,7 @@
 	border: none; 
 	padding: 10px 20px; 
 	margin-top: 30px;
+	font-size: 14px;
 }
 .voorkeur-opslaan:hover {
 	background-color: #333; 

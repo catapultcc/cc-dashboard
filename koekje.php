@@ -23,20 +23,20 @@ function checkCookieAccept() {
 	} else {
 		jQuery("#catacookielaw-setting").hide();
 		jQuery("#catacookielaw").show("slow");
-		document.getElementById("catacookielaw").style.display = "block";
+		//document.getElementById("catacookielaw").style.display = "block";
 	}
 }	
 // #2 checkAnalyticsCookie functie	
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '<?php echo get_theme_mod("ga_code");?>');
 function checkAnalyticsCookie() {
 	var koek2 = getCookie("cookieControlAnalytics");
 	if (koek2 != "nee") {
 		jQuery("input#cookie-analytische-accept").prop('checked', true);
 		<?php if (get_theme_mod("ga_code") != ""); { ?>
 		jQuery.getScript( "https://www.googletagmanager.com/gtag/js?id=<?php echo get_theme_mod("ga_code");?>");
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', '<?php echo get_theme_mod("ga_code");?>');
 		<?php } ?>
 	}
 }
